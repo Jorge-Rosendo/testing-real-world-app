@@ -1,5 +1,5 @@
-import SignInPage from "../pages/SignInPage"
-import SignUpPage from "../pages/SignUpPage"
+import SignInPage from "../pages/singInPage"
+import SignUpPage from "../pages/singUpPage"
 
 const signInPage = new SignInPage()
 const signUpPage = new SignUpPage()

@@ -1,22 +1,22 @@
 import userData from "../fixtures/users/userData.json"
 import SignInPage from "../pages/singInPage"
+import PaymentPage from "../pages/paymentPage"
 
 const signInPage = new SignInPage()
-
+const paymentPage = new PaymentPage()
 
 describe('Real World App Test', () => {
 
-    it('Successfull Login', () => {
+    it('Send money with sufficient balance', () => {
         signInPage.accessSigninPage()
         signInPage.puttingValidUser(userData.userSeccess.username, userData.userSeccess.password)
         signInPage.clickSinginButton()
         signInPage.checkingLoginSuccessfully()
-    })
-
-    it('Failed Login', () => {
-        signInPage.accessSigninPage()
-        signInPage.puttingValidUser(userData.userFail.username, userData.userFail.password)
-        signInPage.clickSinginButton()
-        signInPage.checkingErrorMessage()
+        paymentPage.goToTransactionSection()
+        paymentPage.selectContact()
+        paymentPage.puttingAmount("100.00")
+        paymentPage.puttingNote("debt payment")
+        paymentPage.confirmingPayment()
+        paymentPage.successMessage()
     })
 })

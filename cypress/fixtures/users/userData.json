@@ -3,8 +3,12 @@
         "username": "Heath93",
         "password": "s3cret"
       },
-      "userFail": {
+    "userFail": {
         "username": "test",
         "password": "test"
-      }
+      },
+     "userWithoutTransactions": {
+        "username" : "JorgeRos",
+        "password" : "test123"
+     } 
 }
